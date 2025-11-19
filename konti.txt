@@ -1,0 +1,13 @@
+﻿1;101;Lønekonto;5000;DKK
+1;102;Opsparing;12000;DKK
+2;201;Lønekonto;7500;DKK
+2;202;Opsparing;9000;DKK
+3;301;Lønekonto;3000;DKK
+3;302;Opsparing;4500;DKK
+4;401;Lønekonto;8000;DKK
+5;501;Lønekonto;2000;DKK
+6;601;Opsparing;10000;DKK
+7;701;Lønekonto;1500;DKK
+8;801;Opsparing;7000;DKK
+9;901;Lønekonto;6000;DKK
+10;1001;Opsparing;12000;DKK
