@@ -1,4 +1,4 @@
-﻿1;Peter;Jensen
+1;Peter;Jensen
 2;Anna;Hansen
 3;Lars;Nielsen
 4;Maria;Larsen
@@ -8,7 +8,4 @@
 8;Ida;Johansen
 9;Mads;Andersen
 10;Laura;Olsen
-
-011;Thomas              ;Lancestremere
-
-012;Borby               ;Lancestremere
+11;John;Johnson

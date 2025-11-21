@@ -3,15 +3,13 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 BRUGERVALG-TXT PIC X(2).
-
-       LINKAGE SECTION.
        01 MENU-VALG PIC 9.
 
-       PROCEDURE DIVISION USING MENU-VALG.
+       LINKAGE SECTION.
+       01 RETUR PIC 9.
 
-           DISPLAY "---------------------------------------".
-           DISPLAY "     BANK CICS-SYSTEM v1.0".
+       PROCEDURE DIVISION USING RETUR.
+
            DISPLAY "---------------------------------------".
            DISPLAY "1. Vis kunde".
            DISPLAY "2. Vis konto".
@@ -21,9 +19,8 @@
            DISPLAY "---------------------------------------".
            DISPLAY "Valg: " WITH NO ADVANCING.
 
-           ACCEPT BRUGERVALG-TXT.
+           ACCEPT MENU-VALG.
 
-           *> Konverter til tal
-           MOVE FUNCTION NUMVAL(BRUGERVALG-TXT) TO MENU-VALG.
+           MOVE MENU-VALG TO RETUR.
 
            EXIT PROGRAM.
