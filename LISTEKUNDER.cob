@@ -36,14 +36,13 @@
                READ KUNDEFIL
                    AT END SET EOF TO TRUE
                    NOT AT END
-                       IF FUNCTION TRIM(KUNDE-LINJE) = SPACE
-                           CONTINUE
-                       ELSE
+                       IF FUNCTION 
+                       LENGTH(FUNCTION TRIM(KUNDE-LINJE)) > 0
                            UNSTRING KUNDE-LINJE
                                DELIMITED BY ";"
                                INTO FELT1 FELT2 FELT3
 
-                           DISPLAY FUNCTION TRIM(FUNCTION NUMVAL(FELT1))
+                           DISPLAY FUNCTION TRIM(FELT1)
                                    "  "
                                    FUNCTION TRIM(FELT2)
                                    " "

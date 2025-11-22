@@ -10,6 +10,9 @@
        PROCEDURE DIVISION.
 
            PERFORM MAIN-LOOP
+           DISPLAY "---------------------------------------"
+           DISPLAY "Afslutter systemet..."
+           DISPLAY "---------------------------------------"
            STOP RUN.
 
        MAIN-LOOP.
@@ -20,7 +23,7 @@
            PERFORM MENU-HEADER
            ACCEPT MENU-VALG
 
-           PERFORM UNTIL MENU-VALG = 5
+           PERFORM UNTIL MENU-VALG = 6
                EVALUATE MENU-VALG
                    WHEN 1
                        CALL "VISKUNDE" USING RC
@@ -31,12 +34,14 @@
                    WHEN 4
                        CALL "OPRETKUNDE" USING RC
                    WHEN 5
-                       DISPLAY "Afslutter systemet..."
+                       CALL "SLETKUNDE" USING RC
+                   WHEN 6
+                       EXIT PERFORM  *> loop stopper her
                    WHEN OTHER
                        DISPLAY "Ugyldigt valg."
                END-EVALUATE
 
-               IF MENU-VALG NOT = 5
+               IF MENU-VALG NOT = 6
                    DISPLAY "---------------------------------------"
                    DISPLAY "     BANK CICS-SYSTEM v1.0"
                    DISPLAY "---------------------------------------"
@@ -45,13 +50,12 @@
                END-IF
            END-PERFORM.
 
-           STOP RUN.
-
        MENU-HEADER.
            DISPLAY "1. Vis kunde"
            DISPLAY "2. Vis konto"
            DISPLAY "3. Liste alle kunder"
            DISPLAY "4. Opret ny kunde"
-           DISPLAY "5. Afslut"
+           DISPLAY "5. Slet kunde"
+           DISPLAY "6. Afslut"
            DISPLAY "---------------------------------------"
            DISPLAY "Valg: " WITH NO ADVANCING.

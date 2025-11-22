@@ -15,7 +15,8 @@
            DISPLAY "2. Vis konto".
            DISPLAY "3. Liste alle kunder".
            DISPLAY "4. Opret ny kunde".
-           DISPLAY "5. Afslut".
+           DISPLAY "5. SLet kunde".
+           DISPLAY "6. Afslut".
            DISPLAY "---------------------------------------".
            DISPLAY "Valg: " WITH NO ADVANCING.
 
