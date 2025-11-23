@@ -4,8 +4,8 @@
        DATA DIVISION.
        WORKING-STORAGE SECTION.
 
-       01 MENU-VALG       PIC 9.
-       01 RC              PIC 9. *> Record-Code
+       01 MENU-VALG            PIC 9.
+       01 RC                   PIC 9. *> Record-Code
 
        PROCEDURE DIVISION.
 

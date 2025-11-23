@@ -3,10 +3,10 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 MENU-VALG PIC 9.
+       01 MENU-VALG            PIC 9.
 
        LINKAGE SECTION.
-       01 RETUR PIC 9.
+       01 RETUR                PIC 9.
 
        PROCEDURE DIVISION USING RETUR.
 

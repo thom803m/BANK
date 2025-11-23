@@ -12,29 +12,29 @@
        DATA DIVISION.
        FILE SECTION.
        FD KUNDEFIL.
-       01 KUNDE-LINJE      PIC X(200).
+       01 KUNDE-LINJE          PIC X(200).
 
        FD TEMPFIL.
-       01 TEMP-LINJE       PIC X(200).
+       01 TEMP-LINJE           PIC X(200).
 
        WORKING-STORAGE SECTION.
-       01 SØGE-ID          PIC X(10).
-       01 FELT-ID          PIC X(10).
-       01 FELT-FORNAVN     PIC X(50).
-       01 FELT-EFTERNAVN   PIC X(50).
+       01 SØGE-ID              PIC X(10).
+       01 FELT-ID              PIC X(10).
+       01 FELT-FORNAVN         PIC X(50).
+       01 FELT-EFTERNAVN       PIC X(50).
 
-       01 TRIM-LINJE       PIC X(200).
+       01 TRIM-LINJE           PIC X(200).
 
-       01 EOF-FLAG         PIC X VALUE "N".
-          88 EOF           VALUE "Y".
-          88 NOT-EOF       VALUE "N".
+       01 EOF-FLAG             PIC X VALUE "N".
+          88 EOF               VALUE "Y".
+          88 NOT-EOF           VALUE "N".
 
-       01 KUNDE-FUNDET     PIC X VALUE "N".
-          88 KUNDE-EXISTERER VALUE "Y".
+       01 KUNDE-FUNDET         PIC X VALUE "N".
+          88 KUNDE-EXISTERER   VALUE "Y".
           88 KUNDE-IKKE-FUNDET VALUE "N".
 
        LINKAGE SECTION.
-       01 RETUR PIC 9.
+       01 RETUR                PIC 9.
 
        PROCEDURE DIVISION USING RETUR.
 
