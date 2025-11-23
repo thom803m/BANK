@@ -36,7 +36,7 @@
                    WHEN 5
                        CALL "SLETKUNDE" USING RC
                    WHEN 6
-                       EXIT PERFORM  *> loop stopper her
+                       EXIT PERFORM 
                    WHEN OTHER
                        DISPLAY "Ugyldigt valg."
                END-EVALUATE

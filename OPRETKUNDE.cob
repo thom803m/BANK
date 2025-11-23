@@ -17,8 +17,8 @@
        01 FELT-FORNAVN   PIC X(50).
        01 FELT-EFTERNAVN PIC X(50).
 
-       01 LAST-ID        PIC 9(5) VALUE 0.
-       01 NEW-ID         PIC 9(5).
+       01 FORRIG-ID        PIC 9(5) VALUE 0.
+       01 NY-ID         PIC 9(5).
 
        01 NY-FORNAVN     PIC X(50).
        01 NY-EFTERNAVN   PIC X(50).
@@ -36,14 +36,12 @@
 
            DISPLAY "=== Opret ny kunde ===".
 
-      * Indtast navn
            DISPLAY "Fornavn: " WITH NO ADVANCING.
            ACCEPT NY-FORNAVN.
 
            DISPLAY "Efternavn: " WITH NO ADVANCING.
            ACCEPT NY-EFTERNAVN.
 
-      * Find seneste ID
            OPEN INPUT KUNDEFIL
            PERFORM UNTIL EOF
                READ KUNDEFIL
@@ -55,23 +53,22 @@
                                DELIMITED BY ";"
                                INTO FELT-ID FELT-FORNAVN FELT-EFTERNAVN
 
-                           IF FUNCTION NUMVAL(FELT-ID) > LAST-ID
-                               MOVE FUNCTION NUMVAL(FELT-ID) TO LAST-ID
+                           IF FUNCTION NUMVAL(FELT-ID) > FORRIG-ID
+                               MOVE FUNCTION NUMVAL(FELT-ID) 
+                               TO FORRIG-ID
                            END-IF
                        END-IF
                END-READ
            END-PERFORM
            CLOSE KUNDEFIL
 
-      * Beregn nyt ID
-           ADD 1 TO LAST-ID
-           MOVE LAST-ID TO NEW-ID
+           ADD 1 TO FORRIG-ID
+           MOVE FORRIG-ID TO NY-ID
 
-      * Konstruér linjen
            MOVE ALL SPACES TO LINJE
 
            STRING
-               FUNCTION TRIM(NEW-ID) DELIMITED BY SIZE
+               FUNCTION TRIM(NY-ID) DELIMITED BY SIZE
                ";"
                FUNCTION TRIM(NY-FORNAVN) DELIMITED BY SIZE
                ";"
@@ -79,12 +76,11 @@
                INTO LINJE
            END-STRING
 
-      * Skriv til fil
            OPEN EXTEND KUNDEFIL
            WRITE KUNDE-LINJE FROM LINJE
            CLOSE KUNDEFIL
 
-           DISPLAY "Kunde oprettet! ID: " FUNCTION TRIM(NEW-ID)
+           DISPLAY "Kunde oprettet! ID: " FUNCTION TRIM(NY-ID)
 
            MOVE 0 TO RETUR
            EXIT PROGRAM.

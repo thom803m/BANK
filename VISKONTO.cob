@@ -19,11 +19,11 @@
           88 EOF        VALUE "Y".
           88 NOT-EOF    VALUE "N".
 
-       01 FELT1 PIC X(10).  *> Konto-ID
-       01 FELT2 PIC X(10).  *> Kunde-ID
-       01 FELT3 PIC X(20).  *> Konto-type
-       01 FELT4 PIC X(15).  *> Balance
-       01 FELT5 PIC X(5).   *> Valuta
+       01 FELT1 PIC X(10).
+       01 FELT2 PIC X(10).
+       01 FELT3 PIC X(20).
+       01 FELT4 PIC X(15).
+       01 FELT5 PIC X(5).
 
        LINKAGE SECTION.
        01 RETUR PIC 9.

@@ -13,15 +13,15 @@
        01 KUNDE-LINJE PIC X(200).
 
        WORKING-STORAGE SECTION.
-       01 SØGE-ID     PIC 9(3).  *> numerisk ID
+       01 SØGE-ID     PIC 9(3).
        01 FUNDET      PIC X VALUE "N".
        01 EOF-FLAG    PIC X VALUE "N".
           88 EOF      VALUE "Y".
           88 NOT-EOF  VALUE "N".
 
-       01 FELT1 PIC X(10).  *> ID
-       01 FELT2 PIC X(20).  *> Fornavn
-       01 FELT3 PIC X(20).  *> Efternavn
+       01 FELT1 PIC X(10).
+       01 FELT2 PIC X(20).
+       01 FELT3 PIC X(20).
 
        LINKAGE SECTION.
        01 RETUR PIC 9.
